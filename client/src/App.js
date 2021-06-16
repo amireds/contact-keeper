@@ -9,6 +9,7 @@ import About from "./pages/About";
 import "./App.css";
 import AuthState from "./context/auth/AuthState";
 import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
               </Switch>
             </div>
           </Fragment>
