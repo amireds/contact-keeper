@@ -7,22 +7,27 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 
 import "./App.css";
+import AuthState from "./context/auth/AuthState";
+import Register from "./components/auth/Register";
 
 function App() {
   return (
-    <ContactState>
-      <Router>
-        <Fragment>
-          <Navbar />
-          <div className="container">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/about" component={About} />
-            </Switch>
-          </div>
-        </Fragment>
-      </Router>
-    </ContactState>
+    <AuthState>
+      <ContactState>
+        <Router>
+          <Fragment>
+            <Navbar />
+            <div className="container">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/register" component={Register} />
+              </Switch>
+            </div>
+          </Fragment>
+        </Router>
+      </ContactState>
+    </AuthState>
   );
 }
 
