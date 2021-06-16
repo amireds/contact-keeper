@@ -12,7 +12,7 @@ function App() {
   return (
     <ContactState>
       <Router>
-        <Fragment classsName="App">
+        <Fragment>
           <Navbar />
           <div className="container">
             <Switch>
