@@ -6,9 +6,10 @@ import {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   CLEAR_ERROR,
+  LOGOUT,
 } from "../Types";
-// eslint-import/no-anonymous-default-export
-export default (state, action) => {
+
+const authReducer = (state, action) => {
   switch (action.type) {
     case USER_LOADED:
       return {
@@ -29,6 +30,7 @@ export default (state, action) => {
     case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGIN_FAIL:
+    case LOGOUT:
       localStorage.removeItem("token");
       return {
         ...state,
@@ -47,3 +49,5 @@ export default (state, action) => {
       return state;
   }
 };
+
+export default authReducer;

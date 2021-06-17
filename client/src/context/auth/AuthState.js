@@ -11,6 +11,7 @@ import {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   CLEAR_ERROR,
+  LOGOUT,
 } from "../Types";
 
 // Create Initial State
@@ -93,7 +94,9 @@ const AuthState = (props) => {
 
   // Logout
   const logout = () => {
-    console.log("logout");
+    dispatch({
+      type: LOGOUT,
+    });
   };
 
   // Clear Errors
